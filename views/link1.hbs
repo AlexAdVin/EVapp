@@ -1,0 +1,48 @@
+
+
+
+    <!-- Gooogle Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel='stylesheet' href='/Circular-Progressbar/styleCircular_copy.css' type="text/css" media="screen" />
+    <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="circular-progress">
+            <div class="value-container">0%</div>
+        </div>     
+    </div>
+
+    <div class="container2">
+        <button id="chargingText" >HOVER ME</button>
+    </div>
+
+    <div class="container3">
+      <form>
+    	  <input type="range" name="brightness" id="brightness" min="1" max="100" value="100">
+      </form>
+    </div>
+
+
+    <!-- Script -->
+
+    <script>
+      window.addEventListener("load", function() {
+        const script1 = this.document.createElement("script");
+        script1.src = "/Circular-Progressbar/scriptCircular.js";
+        this.document.body.appendChild(script1);
+
+        /* 
+        const script2 = this.document.createElement("script");
+        script2.src = "/Circular-Progressbar/nSlider.js";
+        this.document.body.appendChild(script2);
+        */
+
+      });
+    </script>

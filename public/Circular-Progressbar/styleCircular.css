@@ -1,0 +1,160 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 400px;
+  width: 400px;
+  background-color: #171d18;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  border-radius: 8px;
+  box-shadow: 20px 20px 40px rgba(109, 250, 116, 0.582);
+  display: grid;
+  place-items: center;
+}
+.circular-progress {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: #17181d;
+  border-radius: 50%;
+}
+.value-container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  color: #17fa8e;
+}
+
+
+
+
+
+/* Neon button _________________________________________________________ */
+
+
+.neon-button {
+  font-size: 4rem;
+
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+  position: relative;
+}
+
+.neon-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+
+/* Animated button _________________________________________________________ */
+
+button1{
+  height: 100px;
+  width: 300px;
+  font-family: 'Poppins',sans-serif;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #17181d;
+  border: 6px solid #17fa8e;
+  color: #17fa8e;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  cursor: pointer;
+  outline: none;
+  display: grid;
+  place-items: center;
+}
+button1:before{
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 300px;
+  background-color: #17181d;
+  margin: auto;
+  left: -6px;
+  right: 0;
+  bottom: -6px;
+  transition: width 0.5s,
+              height 0.5s 0.5s;
+}
+button1:after{
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 300px;
+  background-color: #17181d;
+  margin: auto;
+  left: -6px;
+  right: 0;
+  top: -6px;
+  transition: width 0.5s,
+              height 0.5s 0.5s;
+}
+
+button1:hover:before,
+button1:hover:after{
+  width: 0;
+  height: 6px;
+  transition: height 0.5s,
+              width 0.5s 0.5s;
+}
+
+
+
+
