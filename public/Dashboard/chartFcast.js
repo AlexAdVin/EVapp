@@ -1,54 +1,57 @@
-const ctx1 = document.getElementById('myChart').getContext('2d');
+const ctx2 = document.getElementById('FcastChart').getContext('2d');
 
 
-var data1 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emis" \
-                        ORDER BY "Minutes5DK" desc LIMIT 200  \
+var data2 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emisprog" \
+                        ORDER BY "Minutes5DK" desc LIMIT 100  \
                         '};
                                            
 
                          
-var co2e = [];
-var timeStamp = [];
-var time = [];
+var co2eFcast = [];
+var timeStamp2 = [];
+var time1 = [];
 $.ajax({
     url: 'https://www.energidataservice.dk/proxy/api/datastore_search_sql',
     type: "GET",
-    data: data1,
+    data: data2,
     dataType: 'jsonp',
     success: function(data) {
       console.log("CO2 API:", data.result.records[0]['CO2Emission'])
 
     for (let i = 0; i < data.result.records.length; i++) {
-        co2e.push(data.result.records[i]['CO2Emission']);
-        timeStamp.push(new Date(data.result.records[i]['Minutes5DK']));
+        co2eFcast.push(data.result.records[i]['CO2Emission']);
+        timeStamp2.push(new Date(data.result.records[i]['Minutes5DK']));
 
 
         if (i % 11) {
             continue; // this keyword means skip following steps, jump to next iteration
         }
         else {
-            time.push(timeStamp[i].getHours() + ":" + timeStamp[i].getMinutes());
+            time1.push(timeStamp2[i].getHours() + ":" + timeStamp2[i].getMinutes());
         }
     }
 
-    console.log("test..........", co2e, timeStamp);
-    console.log("test2..........", time.sort());
+   
+
+
+    console.log("test--->", co2eFcast, timeStamp2);
+    console.log("test2..........", time1);
 
     }
 }).done(function (data) {
 
-    const myChart = new Chart(ctx1, {
+    const myChart = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: time.sort(),
+            labels: time1,
             datasets: [{
                 label: 'gCO2e/kWh',
-                data: co2e,
+                data: co2eFcast,
                 backgroundColor: [
-                    'rgba(255, 206, 86, 0.4)'
+                    'rgba(75, 192, 192, 0.4)'
                 ],
                 borderColor: [
-                    'rgba(255, 206, 86, 1)'
+                    'rgba(75, 192, 192, 1)'
                 ],
                 borderWidth: 1
             }]

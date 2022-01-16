@@ -1,0 +1,135 @@
+
+    <link rel="stylesheet" href="Dashboard/styles/normalize.css" />
+    <link rel="stylesheet" href="Dashboard/styles/indexDash.css" />
+
+      <!-- Gooogle Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+      <!-- Stylesheet -->
+    <link rel='stylesheet' href='/Circular-Progressbar/styleCircular.css' type="text/css" media="screen" />
+    <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+
+
+  <style>
+    .row {
+  display: flex;
+  
+}
+
+.column {
+  flex: 50%;
+  
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    
+  }
+}
+  </style>
+
+
+    <section class="section">
+      <header class="section__header">
+        <h2 class="section__title">Battery Info</h2>
+        <a href="#" class="section__link">View all</a>
+      </header>
+
+
+
+<div class="row">
+
+  <div class="column">
+            <li class="team__item2">
+            <a class="chargingText" href="#">
+                <div class="circular-progress">
+                    <div class="value-container">0%</div>
+                </div>  
+              <div class="team__inform">
+                <p class="team__name">New project</p>
+                <time class="date" datetime="2020-05-01T10:00:00"
+                  >01 May, 2020</time
+                >
+              </div>
+            </a>
+          </li>
+  </div>
+
+
+  <div class="column">
+            <li class="team__item2">
+            <a class="chargingText" href="#">
+              <div class="team__header">
+                <ul class="photo">
+                  <li class="photo__item">
+                    <span class="photo__substrate">+6</span>
+                  </li>
+                  <li class="photo__item">
+                    <img
+                      src="Dashboard/img/raychan-9UkAHVs5y7Y-unsplash.jpg"
+                      alt="Yulia's photo"
+                    />
+                  </li>
+                  <li class="photo__item">
+                    <img
+                      src="Dashboard/img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                      alt="Jessica's photo"
+                    />
+                  </li>
+                </ul>
+                
+              </div>
+              <div class="team__inform">
+                <p class="team__name">New project</p>
+                <time class="date" datetime="2020-05-01T10:00:00"
+                  >01 May, 2020</time
+                >
+              </div>
+
+              <div class="team__footer">
+                <button1 id="chargingText" >HOVER ME</button1>
+              </div>
+                
+            </a>
+          </li>
+  </div>
+
+
+</div>
+
+
+
+    </section>
+
+
+
+
+<script>
+       window.addEventListener("load", function() {
+
+        const script1 = this.document.createElement("script");
+        script1.src = "/Circular-Progressbar/scriptCircular.js";
+        this.document.body.appendChild(script1);
+
+        /* -- ! script2 is used in layout ! --
+        const script2 = this.document.createElement("script");
+        script2.src = "/Dashboard/scriptDash.js";
+        this.document.body.appendChild(script2);
+        */
+
+        const script4 = this.document.createElement("script");
+        script4.src = "/Dashboard/testAPI.js";
+        this.document.body.appendChild(script4);
+        
+
+        /* 
+        const script5 = this.document.createElement("script");
+        script5.src = "/Circular-Progressbar/nSlider.js";
+        this.document.body.appendChild(script5);
+        */
+
+      });
+
+</script>

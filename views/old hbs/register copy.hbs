@@ -1,0 +1,98 @@
+
+
+
+      <!-- Gooogle Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+      <!-- Stylesheet -->
+    <link rel='stylesheet' href='/Circular-Progressbar/styleCircular.css' type="text/css" media="screen" />
+    <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+
+  <style>
+    .row {
+  display: flex;
+  
+}
+
+.column {
+  flex: 50%;
+  
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    
+  }
+}
+
+
+
+  </style>
+
+
+<section class="section">
+    <ul class="project">
+        <li class="project_item">
+            <div class="project__link">
+              {{ include ./partials/messages }}
+              <!-- Form name -->
+              <form action='/users/register' method="POST">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="name" name="name" class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="pass" class="form-control">
+              </div>
+
+              <div class="form-group">
+                  <label for="password2">Password</label>
+                  <input type="password" name="pass2" class="form-control">
+              </div>
+
+              <button type="submit" class="banner__button">Create account</button>
+              </form>
+              
+              
+              <hr><br><br>
+              <p>Have an account? <a href="/users/login">Login</a></p>
+            </div>
+
+
+        </li>
+    </ul>
+</section>  
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+       window.addEventListener("load", function() {
+        /* 
+        const script1 = this.document.createElement("script");
+        script1.src = "/Circular-Progressbar/scriptCircular.js";
+        this.document.body.appendChild(script1);
+        */
+
+        /* -- ! script2 is used in layout ! --   */
+
+      });
+
+</script>

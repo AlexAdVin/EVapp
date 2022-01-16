@@ -1,0 +1,288 @@
+
+    <link rel="stylesheet" href="Dashboard/styles/normalize.css" />
+    <link rel="stylesheet" href="Dashboard/styles/indexDash.css" />
+
+        <!-- Gooogle Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel='stylesheet' href='/Circular-Progressbar/styleCircular.css' type="text/css" media="screen" />
+    <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<section class="section">
+          <ul class="project">
+            <li class="project__item">
+              <a href="#" class="project__link focus--box-shadow">
+                <div class="project__wrapper">
+                    <h2 class="section__title">Historic data gCO2/kWh</h2>  
+                 
+                </div>
+                <canvas id="myChart"></canvas>
+              </a>
+            </li>
+          </ul>
+</section>
+
+
+        <section class="section">
+
+          <header class="section__header">
+          <h2 class="section__title">Forecast gCO2/kWh</h2>
+          <a href="#" class="section__link">View all</a>
+          </header>
+
+          <canvas id="FcastChart"></canvas>
+
+        </section>
+<!-- 
+        <section class="section">
+
+          <header class="section__header">
+          <h2 class="section__title">Chart 2</h2>
+          <a href="#" class="section__link">View all</a>
+          </header>
+
+	        <div id='myDiv'></div>
+
+        </section>
+
+        <section class="section">
+
+          <header class="section__header">
+          <h2 class="section__title">Chart 3</h2>
+          <a href="#" class="section__link">View all</a>
+          </header>
+
+	        <div id='plot'></div>
+
+        </section>
+-->
+          <header class="section__header">
+            <h2 class="section__title">Teams</h2>
+            <a href="#" class="section__link">View all</a>
+          </header>
+          <ul class="team">
+            <li class="team__item">
+              <a class="team__link focus--box-shadow" href="#">
+                <div class="team__header">
+                  <ul class="photo">
+                    <li class="photo__item">
+                      <span class="photo__substrate">+2</span>
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="Dashboard/img/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                        alt="Jack's photo"
+                      />
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="Dashboard/img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="team__inform">
+                  <p class="team__name">Product presentation</p>
+                  <time class="date" datetime="2020-05-05T10:00:00"
+                    >05 May, 2020</time
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="team__item">
+              <a class="team__link focus--box-shadow" href="#">
+                <div class="team__header">
+                  <ul class="photo">
+                    <li class="photo__item">
+                      <span class="photo__substrate">+6</span>
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="Dashboard/img/raychan-9UkAHVs5y7Y-unsplash.jpg"
+                        alt="Yulia's photo"
+                      />
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="Dashboard/img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="team__inform">
+                  <p class="team__name">New project</p>
+                  <time class="date" datetime="2020-05-01T10:00:00"
+                    >01 May, 2020</time
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="team__item">
+              <a class="team__link focus--box-shadow" href="#">
+                <div class="team__header">
+                  <ul class="photo">
+                    <li class="photo__item">
+                      <img
+                        src="Dashboard/img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="team__inform">
+                  <p class="team__name">Design development</p>
+                  <time class="date" datetime="2020-01-10T10:00:00"
+                    >10 January, 2020</time
+                  >
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section class="section">
+          <header class="section__header">
+            <h2 class="section__title">Projects</h2>
+            <div class="section__control">
+              <button
+                class="section__button focus--box-shadow"
+                type="button"
+                aria-label="Filter projects"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  role="presentation"
+                >
+                  <path
+                    d="M20,8.18V3a1,1,0,0,0-2,0V8.18a3,3,0,0,0,0,5.64V21a1,1,0,0,0,2,0V13.82a3,3,0,0,0,0-5.64ZM19,12a1,1,0,1,1,1-1A1,1,0,0,1,19,12Zm-6,2.18V3a1,1,0,0,0-2,0V14.18a3,3,0,0,0,0,5.64V21a1,1,0,0,0,2,0V19.82a3,3,0,0,0,0-5.64ZM12,18a1,1,0,1,1,1-1A1,1,0,0,1,12,18ZM6,6.18V3A1,1,0,0,0,4,3V6.18a3,3,0,0,0,0,5.64V21a1,1,0,0,0,2,0V11.82A3,3,0,0,0,6,6.18ZM5,10A1,1,0,1,1,6,9,1,1,0,0,1,5,10Z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="section__button section__button--painted focus--box-shadow"
+                type="button"
+                aria-label="Add New project"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  role="presentation"
+                >
+                  <path
+                    d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </header>
+
+        </section>
+
+
+    <!-- Script -->
+        <script>
+      window.addEventListener("load", function() {
+        const script1 = this.document.createElement("script");
+        script1.src = "/Circular-Progressbar/scriptCircular.js";
+        this.document.body.appendChild(script1);
+
+        /* -- ! script2 is used in layout ! --
+        const script2 = this.document.createElement("script");
+        script2.src = "/Dashboard/scriptDash.js";
+        this.document.body.appendChild(script2);
+        */
+        
+        const script3 = this.document.createElement("script");
+        script3.src = "/Dashboard/chartFcast.js";
+        this.document.body.appendChild(script3);
+        
+
+        
+        const script4 = this.document.createElement("script");
+        script4.src = "/Dashboard/chartBar.js";
+        this.document.body.appendChild(script4);
+        
+
+        /*
+        const script5 = this.document.createElement("script");
+        script5.src = "/Dashboard/chartBar3.js";
+        this.document.body.appendChild(script5);
+        */
+
+      });
+    </script>
+

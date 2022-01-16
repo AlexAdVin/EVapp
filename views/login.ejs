@@ -1,0 +1,107 @@
+
+
+      <!-- Gooogle Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+      <!-- Stylesheet -->
+    <link rel='stylesheet' href='/Circular-Progressbar/styleCircular.css' type="text/css" media="screen" />
+    <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+
+  <style>
+    .row {
+  display: flex;
+  
+}
+
+.column {
+  flex: 50%;
+  
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    
+  }
+}
+
+  </style>
+
+
+<section class="section">
+    <ul class="project">
+        <li class="project_item">
+            <div class="project__link focus--box-shadow">
+                <!-- Form name -->
+                <form action='/users/login' method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" value="<% typeof email != 'undefined' ? email : '' %>">
+                </div>
+
+                <div class="form-group">
+                  <label for="name">Password</label>
+                  <input type="text" name="password" class="form-control" value="<% typeof password != 'undefined' ? password : '' %>">
+                </div>
+
+                <button type="submit" class="banner__button">Login</button>
+                </form>
+
+                <hr><br><br>
+                <a href="/auth/google">
+                    <div class="googleContainer">
+                    <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
+                    <p>Facebook account login</p>
+                    </div>
+                </a>
+                <br>
+                <a href="/auth/google">
+                    <div class="googleContainer">
+                    <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
+                    <p>Google account login</p>
+                    </div>
+                </a>
+                <br>
+                <a href="/auth/google">
+                    <div class="googleContainer">
+                    <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
+                    <p>Other account login</p>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</section>  
+
+
+
+
+
+              <a class="chargingText" href="/auth/google">
+              <div class="googleContainer">
+                <img src="images/g_logo.png" alt="Google Icon" loading="lazy">
+                <p>Login</p>
+              </div>
+            </a>
+
+
+
+
+
+
+
+<script>
+       window.addEventListener("load", function() {
+        /* 
+        const script1 = this.document.createElement("script");
+        script1.src = "/Circular-Progressbar/scriptCircular.js";
+        this.document.body.appendChild(script1);
+        */
+
+        /* -- ! script2 is used in layout ! --   */
+
+      });
+
+</script>
