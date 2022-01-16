@@ -24,7 +24,7 @@ var app = express();
 
 //const { Router } = require('express');
 //const { MongoClient } = require('mongodb');
-//var { env } = require('dotenv').config();
+var { env } = require('dotenv').config();
 /*
 MongoClient.connect(`${process.env.START_MONGODB}${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}${process.env.END_MONGODB}`, {
   useNewUrlParser: true, 
@@ -38,7 +38,9 @@ MongoClient.connect(`${process.env.START_MONGODB}${process.env.MONGODB_USERNAME}
 require('./config/passport')(passport);
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+//const db = require('./config/keys').mongoURI;
+var db = `${process.env.START_MONGODB}${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}${process.env.END_MONGODB}`;
+
 
 // Connect to MongoDB
 mongoose
