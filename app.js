@@ -8,7 +8,7 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var expressLayouts = require('express-ejs-layouts');
 var passport = require('passport');
-//var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 var mongoose = require('mongoose');
 
 
@@ -16,7 +16,7 @@ var indexRouter = require('./routes/index');
 var link1Router = require('./routes/link1');
 var dashRouter = require('./routes/dash');
 // var loginRouter = require('./routes/login');
-// var authRouter = require('./routes/auth');
+var authRouter = require('./routes/auth');
 var usersRouter = require('./routes/users.js');
 
 
@@ -65,7 +65,7 @@ app.use(express.json());
 
 // Bodyparser (data from form wit hreq.body)
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ origin: "http://localhost:4000", credentials: true }));
+//app.use(cors({ origin: "http://localhost:4000", credentials: true }));
 app.use(
   session({
     secret: "secret",
@@ -120,7 +120,7 @@ app.use('/', indexRouter);
 app.use('/link1', link1Router);
 //app.use('/dash', dashRouter);
 app.use('/users', usersRouter);
-////////////////////////////////app.use('/auth/google',authRouter);
+app.use('/auth/google',authRouter);
 //app.use('/', usersRouter);
 
 //app.get('/failed', (req,res) => {res.send('You have failed to authenticate! Sorry!')});
@@ -156,10 +156,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const PORT = process.env.PORT || 4000;
+const portal = process.env.PORT || 4000;
 
-app.listen(PORT, function () {
-  console.log(`CORS-enabled web server listening on port: ${PORT}`)
+app.listen(portal, function () {
+  console.log(`CORS-enabled web server listening on port: ${portal}`)
 })
 
 module.exports = app;

@@ -4,9 +4,9 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "start": "node index",
+    "start": "node app.js",
     "heroku-prebuild": "npm install",
-    "dev": "nodemon index"
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,7 +20,6 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.2",
     "git": "^0.1.5",
-    "heroku": "^7.59.2",
     "http-errors": "~1.6.3",
     "mongoose": "^6.1.6",
     "morgan": "~1.9.1",
