@@ -21,9 +21,13 @@
               
               <!-- Form name -->
               <form action='/users/register' method="POST">
-              <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="name" name="name" class="form-control" value="<% typeof name != 'undefined' ? name : '' %>">
+
+              <div class="colMod">
+                <input type="name" name="nameF" class="form-control" placeholder="Enter First name" value="<% typeof nameF != 'undefined' ? nameF : '' %>">
+              </div>
+              <!---->
+              <div class="colMod">
+                <input type="name" name="nameL" class="form-control" placeholder="Enter Last name" value="<% typeof nameL != 'undefined' ? nameL : '' %>">
               </div>
 
               <div class="form-group">

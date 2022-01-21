@@ -8,25 +8,9 @@
       <!-- Stylesheet -->
     <link rel='stylesheet' href='/Circular-Progressbar/styleCircular.css' type="text/css" media="screen" />
     <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-    .row {
-  display: flex;
-  
-}
 
-.column {
-  flex: 50%;
-  
-}
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    
-  }
-}
-
-  </style>
 
 
 <section class="section">
@@ -34,58 +18,126 @@
         <li class="project_item">
             <div class="project__link focus--box-shadow">
                 <!-- Form name -->
-                <form action='/users/login' method="POST">
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control" value="<% typeof email != 'undefined' ? email : '' %>">
-                </div>
+                  <form action="/users/login" method="POST">
+                    <div class="row2">
+                      <h2 style="text-align:center">Login with Social Media or Manually</h2>
+                      
+                      <div class="col1">
+                        <div class="vl"></div>
+                      </div>
 
-                <div class="form-group">
-                  <label for="name">Password</label>
-                  <input type="text" name="password" class="form-control" value="<% typeof password != 'undefined' ? password : '' %>">
-                </div>
+                      <div class="col2">
+                        <a href="#" class="fb btn">
+                          <i class="fa fa-facebook fa-fw"></i>Login with Facebook
+                        </a>
+                        <a href="#" class="twitter btn">
+                          <i class="fa fa-twitter fa-fw"></i>Login with Twitter
+                        </a>
+                        <a href="/auth/google" class="google btn">
+                          <i class="fa fa-google fa-fw"></i>Login with Google+
+                        </a>
+                      </div>
+                
+                      <div class="col2">
+                        <div class="hide-md-lg">
+                          <p>Or sign in manually:</p>
+                        </div>
+                
+                        <input type="text" name="email" 
+                        placeholder="Email" required value="<% typeof email != 'undefined' ? email : '' %>">
+                        <input type="password" name="password" 
+                        placeholder="Password" required value="<% typeof password != 'undefined' ? password : '' %>">
 
-                <button type="submit" class="banner__button">Login</button>
-                </form>
+                        <input type="submit" value="Login">
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                      </div>
 
-                <hr><br><br>
-                <a href="/auth/google">
-                    <div class="googleContainer">
-                    <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
-                    <p>Facebook account login</p>
+
+
+                      <div class="row2">
+
+                        <div class="vl2 col-long"></div>
+
+                        <div class="col-long">
+                          
+                          <button class="btn2" onclick="document.getElementById('id01').style.display='block'" >
+                            Create a new account</button>
+                        </div>
+                        
+                      </div>
+
+
+
                     </div>
-                </a>
-                <br>
-                <a href="/auth/google">
-                    <div class="googleContainer">
-                    <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
-                    <p>Google account login</p>
-                    </div>
-                </a>
-                <br>
-                <a href="/auth/google">
-                    <div class="googleContainer">
-                    <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
-                    <p>Other account login</p>
-                    </div>
-                </a>
+
+                  </form>
+
+
+
             </div>
         </li>
     </ul>
+
+
+
 </section>  
 
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action='/users/register' method="POST">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="/images/T3.webp" alt="Avatar" class="avatar">
+    </div>
+    <div class="containerModal">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <div class="row2">
+
+        <div class="colMod">
+          <input type="nameFirst" name="nameF" class="form-control" placeholder="Enter First name" value="<% typeof nameF != 'undefined' ? nameF : '' %>">
+        </div>
+
+        <div class="colMod">
+          <input type="nameLast" name="nameL" class="form-control" placeholder="Enter Last name" value="<% typeof nameL != 'undefined' ? nameL : '' %>">
+        </div>
+      </div>
+
+      <label for="email"><b>Email</b></label>
+      <input type="email" name="email" class="form-control" placeholder="Enter Email" value="<% typeof email != 'undefined' ? email : '' %>" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" name="password" class="form-control" placeholder="Enter a password" value="<% typeof password != 'undefined' ? password : '' %>" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" name="password2" class="form-control" placeholder="Repeat Password" value="<% typeof password2 != 'undefined' ? password2 : '' %>" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <input type="submit" value="Create an profile">
+      </div>
+    </div>
+  </form>
 
 
+</div>
 
 
+<!--
               <a class="chargingText" href="/auth/google">
               <div class="googleContainer">
-                <img src="images/g_logo.png" alt="Google Icon" loading="lazy">
+                <img src="/images/g_logo.png" alt="Google Icon" loading="lazy">
                 <p>Login</p>
               </div>
             </a>
-
+-->
 
 
 
@@ -94,11 +146,19 @@
 
 <script>
        window.addEventListener("load", function() {
-        /* 
+         
+        const style1 = this.document.createElement("link");
+        style1.rel = 'stylesheet';
+        style1.href = "/stylesheets/style.css";
+        style1.type = "text/css";
+        style1.media = "screen";
+        this.document.head.appendChild(style1);
+        
+        
         const script1 = this.document.createElement("script");
-        script1.src = "/Circular-Progressbar/scriptCircular.js";
+        script1.src = "/javascripts/test.js";
         this.document.body.appendChild(script1);
-        */
+        
 
         /* -- ! script2 is used in layout ! --   */
 
