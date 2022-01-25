@@ -6,36 +6,58 @@
       <!-- Stylesheet -->
     <link rel='stylesheet' href='/Circular-Progressbar/styleCircular.css' type="text/css" media="screen" />
     <!--<link rel="stylesheet" href="/Circular-Progressbar/styleNslider.css" type="text/css" media="screen" /> --> 
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
 
+    <script>
 
-  <style>
-    .row {
-  display: flex;
-  
-}
+$(function() {
 
-.column {
-  flex: 50%;
-  
-}
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    
+$("#slider").draggable({
+  axis: 'x',
+  containment: 'parent',
+  drag: function(event, ui) {
+    if (ui.position.left > 550) {
+      $("#well").fadeOut();
+    } else {
+        // Apparently Safari isn't allowing partial opacity on text with background clip? Not sure.
+      // $("h2 span").css("opacity", 100 - (ui.position.left / 5))
+    }
+  },
+  stop: function(event, ui) {
+    if (ui.position.left < 551) {
+      $(this).animate({
+        left: 0
+      })
+    }
   }
-}
-  </style>
+});
+
+// The following credit: http://www.evanblack.com/blog/touch-slide-to-unlock/
+
+$('#slider')[0].addEventListener('touchmove', function(event) {
+    event.preventDefault();
+    var el = event.target;
+    var touch = event.touches[0];
+    curX = touch.pageX - this.offsetLeft - 73;
+    if(curX <= 0) return;
+    if(curX > 550){
+      $('#well').fadeOut();
+    }
+     el.style.webkitTransform = 'translateX(' + curX + 'px)'; 
+}, false);
+
+$('#slider')[0].addEventListener('touchend', function(event) {	
+    this.style.webkitTransition = '-webkit-transform 0.3s ease-in';
+    this.addEventListener( 'webkitTransitionEnd', function( event ) { this.style.webkitTransition = 'none'; }, false );
+    this.style.webkitTransform = 'translateX(0px)';
+}, false);
+
+});
+    </script>
 
 
-    <section class="section">
-      <header class="section__header">
-        <h2 class="section__title">Battery Info</h2>
-        <a href="#" class="section__link">View all</a>
-      </header>
 
-
-
-    </section>
 
     <section class="section">
       <header class="section__header">
@@ -72,9 +94,63 @@
             </svg>
           </button>
         </div>
+
+
       </header>
 
+      <div class="container">
+        <div class="row">
+          <div class="column1">
+            <h5>Your usage</h5>
+            <br>
+            <p1><b>kW used:</b> 237</p1>
+            <p1><b>Km left today:</b> 37</p1>
+            <br>
+            <p1><b>Lowest price / kWh</b></p1>
+            
+    
+            <p1><b>Status:</b> Active</p1> 
+          </div>
+          <div class="column2">
+            <h5>Schedule settings</h5>
+            <br>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
 
+        
+      </div>
+
+  <div class="team__inform">
+
+    <button class="buttonStart"> </button>
+    
+    <div class="circular-progress">
+      <div class="value-container">0%</div>
+  </div>  
+  <br>
+    <p id="currentDateTime"> </p>
+
+    <br>
+    <h2 id="chargingText">HOVER ME</h2>
+    
+    
+    <br>
+  </div>
+
+  <div id="well">
+			
+    <h3><strong id="slider"></strong> <span>slide to charge</span></h3>
+    
+  </div>
+</section>
+
+
+<section>
+<!--  
       <ul class="team">
         <li class="team__item">
           <a class="team__link focus--box-shadow" href="#">
@@ -121,6 +197,7 @@
             </div>
 
             <div class="team__inform">
+              <button class="buttonStart"> </button>
               <div class="circular-progress">
                 <div class="value-container">0%</div>
             </div>  
@@ -130,10 +207,14 @@
               >
               <br>
               <h2 id="chargingText">HOVER ME</h2>
+              
+              
               <br>
             </div>
           </a>
         </li>
+
+      
         <li class="team__item">
           <a class="team__link focus--box-shadow" href="#">
             <div class="team__header">
@@ -187,7 +268,19 @@
         </li>
 
       </ul>
-    </section>
+-->
+</section>
+
+</section>
+
+    
+<!-- Slider: Slide to ounlock -->
+	<div id="page-wrap">
+
+
+			
+	</div>
+
 
 
 <script>
@@ -197,15 +290,17 @@
         script1.src = "/Circular-Progressbar/scriptCircular.js";
         this.document.body.appendChild(script1);
 
-        /* -- ! script2 is used in layout ! --
-        const script2 = this.document.createElement("script");
-        script2.src = "/Dashboard/scriptDash.js";
-        this.document.body.appendChild(script2);
-        */
+        /* -- ! script2 is used in layout ! -- */
+        const script3 = this.document.createElement("script");
+        script3.src = '/SlideToUnlock/js/slidetounlock.js';
+        this.document.body.appendChild(script3);
+        
 
         const script4 = this.document.createElement("script");
         script4.src = "/Dashboard/testAPI.js";
         this.document.body.appendChild(script4);
+
+        
         
 
         /* 
