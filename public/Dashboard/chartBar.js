@@ -1,19 +1,18 @@
 const ctx1 = document.getElementById('myChart').getContext('2d');
-
-
-var data1 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emis" \
+        
+var data2 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emis" \
                         ORDER BY "Minutes5DK" desc LIMIT 200  \
                         '};
-                                           
 
-                         
 var co2e = [];
 var timeStamp = [];
 var time = [];
+
 $.ajax({
-    url: 'https://www.energidataservice.dk/proxy/api/datastore_search_sql',
+    url: 'https://api.energidataservice.dk/datastore_search_sql',
     type: "GET",
     data: data1,
+    contentType: "application/json",
     dataType: 'jsonp',
     success: function(data) {
       console.log("CO2 API:", data.result.records[0]['CO2Emission'])
@@ -21,7 +20,6 @@ $.ajax({
     for (let i = 0; i < data.result.records.length; i++) {
         co2e.push(data.result.records[i]['CO2Emission']);
         timeStamp.push(new Date(data.result.records[i]['Minutes5DK']));
-
 
         if (i % 11) {
             continue; // this keyword means skip following steps, jump to next iteration

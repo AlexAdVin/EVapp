@@ -5,13 +5,12 @@ var data2 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emispr
                         ORDER BY "Minutes5DK" desc LIMIT 100  \
                         '};
                                            
-
                          
 var co2eFcast = [];
 var timeStamp2 = [];
 var time1 = [];
 $.ajax({
-    url: 'https://www.energidataservice.dk/proxy/api/datastore_search_sql',
+    url: 'https://api.energidataservice.dk/datastore_search_sql',
     type: "GET",
     data: data2,
     dataType: 'jsonp',
