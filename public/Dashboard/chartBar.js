@@ -1,6 +1,6 @@
 const ctx1 = document.getElementById('myChart').getContext('2d');
         
-var data2 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emis" \
+var data1 = {'sql': 'SELECT DISTINCT "Minutes5DK", "CO2Emission" FROM "co2emis" \
                         ORDER BY "Minutes5DK" desc LIMIT 200  \
                         '};
 
