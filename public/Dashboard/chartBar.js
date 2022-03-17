@@ -21,7 +21,12 @@ $.ajax({
         co2e.push(data.result.records[i]['CO2Emission']);
         timeStamp.push(new Date(data.result.records[i]['Minutes5DK']));
 
-        if (i % 11) {
+//For i = 1:24 (0:23)
+//graph(i) = data(i*12 - 1)
+//  traph(i) = average(data(i*12+1:i*12+12))
+//End
+
+        if (i % 12) {
             continue; // this keyword means skip following steps, jump to next iteration
         }
         else {
